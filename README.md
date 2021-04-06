@@ -1,4 +1,4 @@
-SOME DESCRIPTION OF MY PROJECT
+SHORT DESCRIPTION OF THE PROJECT
 
 I CREATED forum app, where user can see some posts. To do that the user can firstly login or register, or the user can just go to posts page without login and register.
 In first way, if the user logged in, he can to like/dislike, comment posts and create posts . If user didn't log in, he can only read posts.
