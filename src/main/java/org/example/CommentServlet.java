@@ -1,0 +1,41 @@
+package org.example;
+
+import org.example.dao.PostDao;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.sql.SQLException;
+
+@WebServlet("/comment")
+public class CommentServlet extends HttpServlet {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        Long id = Long.parseLong(request.getParameter("id"));
+        PostDao postDao = new PostDao();
+
+        try {
+
+            RequestDispatcher requestDispatcher =  request.getRequestDispatcher("comments.jsp");
+            request.setAttribute("comments", postDao.returnComments(id));
+            request.setAttribute("postId", id);
+
+            requestDispatcher.forward(request,response);
+
+
+
+
+
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
+}

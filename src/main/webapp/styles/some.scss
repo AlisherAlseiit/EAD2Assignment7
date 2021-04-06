@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+// Colours
+$black: #000;
+$light-gray: #e2e1e0;
+$red: #dc3545;
+$white: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+
+
+
+  &__info {
+    background-color: $white;
+    cursor: pointer;
+    height: 85%;
+    padding-bottom: 32px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(230px);
+    transition: transform .5s ease;
+    width: 100%;
+
+    &.show {
+      transform: translateY(0);
+      transition: transform .5s ease;
+    }
+
+    &__primary {
+      padding: 16px;
+    }
+
+    &__button {
+      position: absolute;
+      right: 15px;
+      font-size: 18px;
+      color: $light-gray;
+    }
+
+    &__title {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    &__subtext {
+      font-size: 26px;
+    }
+
+    &__more {
+      border-top: 1px solid $light-gray;
+      margin-top: 40px;
+      padding: 16px;
+      padding-bottom: 8px;
+      overflow: scroll;
+      height: 66%;
+      font-size: 14px;
+
+      &__title {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.comment {
+  margin: 20px 0 30px;
+
+  .comment__title {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+}
